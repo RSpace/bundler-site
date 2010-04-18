@@ -5,7 +5,7 @@
     .description
       Grouping your dependencies allows you
       to perform operations on the entire
-      group.
+      group, or on multiple groups at once.
     :highlight_ruby
       # These gems are in the :default group
       gem "nokogiri"
@@ -18,6 +18,11 @@
       group :test do
         gem "rspec"
         gem "faker"
+      end
+      
+      # This gem is in both the :development and :test groups
+      group :development, :test do
+        gem "ruby-debug"
       end
 
   .bullet
